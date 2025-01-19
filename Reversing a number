@@ -1,0 +1,50 @@
+int reverse(int number) {
+    int rev = 0; // Initialize 'rev' outside the loop
+
+    while (number != 0) {
+        int left = number % 10; // Extract the last digit
+        rev = rev * 10 + left;  // Add the digit to 'rev'
+        number = number / 10;   // Remove the last digit
+    }
+
+    return rev; // Return the final reversed number
+}
+
+
+Example Runs
+Input: -123
+Initialization:
+
+number = -123, rev = 0, store = -123.
+First Iteration:
+
+left = -123 % 10 = -3.
+rev = 0 * 10 + (-3) = -3.
+number = -123 / 10 = -12.
+Second Iteration:
+
+left = -12 % 10 = -2.
+rev = -3 * 10 + (-2) = -32.
+number = -12 / 10 = -1.
+Third Iteration:
+
+left = -1 % 10 = -1.
+rev = -32 * 10 + (-1) = -321.
+number = -1 / 10 = 0.
+End of Loop:
+
+number = 0, loop exits.
+store = -123, rev = -321.
+
+
+Output:
+
+
+Given number = -123
+Its reverse is = -321
+Input: 456
+Output:
+
+
+Given number = 456
+Its reverse is = 654
