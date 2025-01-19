@@ -1,0 +1,34 @@
+//Array
+
+void reverseArray(int arr[], int size) {
+    int start = 0, end = size - 1;
+
+    while (start < end) {
+        // Swap the elements
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+
+        // Move the pointers
+        start++;
+        end--;
+    }
+}
+
+//String
+
+void reverseString(char* s, int sSize) {
+    int start = 0, end = sSize - 1;
+
+    while (start < end) {
+        // Swap characters at start and end
+        char temp = s[start];
+        s[start] = s[end];
+        s[end] = temp;
+
+        // Move the pointers towards the center
+        start++;
+        end--;
+    }
+}
+
