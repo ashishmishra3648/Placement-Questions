@@ -1,0 +1,18 @@
+bool checkPerfectNumber(int num) {
+    // Edge case: Numbers <= 1 cannot be perfect numbers
+    if (num <= 1) {
+        return false;
+    }
+
+    int sum = 0;
+
+    // Loop to find proper divisors
+    for (int i = 1; i <= num / 2; i++) {
+        if (num % i == 0) {
+            sum += i; // Add divisor to sum
+        }
+    }
+
+    // Check if sum equals the number
+    return sum==num;
+}
