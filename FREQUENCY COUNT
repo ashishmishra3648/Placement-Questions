@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <string.h>
+
+#define CHAR_COUNT 256 // Total possible characters (ASCII)
+
+void calculateFrequency(char *str) {
+    int frequency[CHAR_COUNT] = {0}; // Array to store character frequencies
+
+    // Iterate through the string and count the occurrences of each character
+    for (int i = 0; str[i] != '\0'; i++) {
+        frequency[(int)str[i]]++;
+    }
+
+    // Display the frequencies of characters that appear in the string
+    printf("Character frequencies:\n");
+    for (int i = 0; i < CHAR_COUNT; i++) {
+        if (frequency[i] > 0) {
+            printf("'%c' = %d\n", i, frequency[i]);
+        }
+    }
+}
+
+int main() {
+    char str[100];
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin); // Read string (including spaces)
+
+    // Remove newline character, if any
+    str[strcspn(str, "\n")] = '\0';
+
+    calculateFrequency(str);
+
+    return 0;
+}
